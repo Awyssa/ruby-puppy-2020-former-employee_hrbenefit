@@ -1,17 +1,20 @@
+
 class Dog
   attr_accessor :name
 
-  @all = []
+  @@all = []
+
   def initialize(name)
     @name = name
     @@all << self
   end
 
-  def self.all?
-    @all
+  def self.all
+    @@all
   end
 
-  def print_all 
+  def self.print_all
+    # puts @@all.map(&:name) - another way to solve, but more complex than needed for this example
     puts @@all.map{ |dog| dog.name }
   end
 
